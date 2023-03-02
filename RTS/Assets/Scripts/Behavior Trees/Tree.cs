@@ -6,7 +6,7 @@ namespace BehaviourTree
 {
     public abstract class Tree : MonoBehaviour
     {
-        private Node mRoot = null;
+        protected Node mRoot = null;
 
         // Start is called before the first frame update
         void Start()
@@ -24,7 +24,7 @@ namespace BehaviourTree
             
         }
 
-        private void FixedUpdate()
+        protected void FixedUpdate()
         {
             mRoot.Evaluate();
         }

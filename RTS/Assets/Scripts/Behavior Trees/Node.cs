@@ -17,9 +17,9 @@ namespace BehaviourTree
         protected NodeState state;
 
         public Node parent;
-        protected List<Node> mChildren;
+        protected List<Node> mChildren = new List<Node>();
 
-        private Dictionary<string, Object> mData = new Dictionary<string, Object>();
+        private Dictionary<string, object> mData = new Dictionary<string, object>();
 
         public Node() 
         {
@@ -40,14 +40,14 @@ namespace BehaviourTree
             mChildren.Add(node);
         }
 
-        public void SetData(string key, Object value)
+        public void SetData(string key, object value)
         {
             mData[key] = value;
         }
 
         public object GetData(string key)
         {
-            if (mData[key] != null)
+            if (mData.ContainsKey(key))
                 return mData[key];
 
             if (parent == null) 
